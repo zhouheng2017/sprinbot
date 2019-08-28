@@ -9,10 +9,10 @@ spring:
     password: guest
 
   datasource:
-    username: root
-    password: root
+    username: hj_caishang
+    password: hj_caishang123
 
-    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
+    url: jdbc:mysql://192.168.4.62:3306/huajin-test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
     # 下面为连接池的补充设置，应用到上面所有数据源中
