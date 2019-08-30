@@ -2,6 +2,7 @@ package com.mytest.sprinbot.controller;
 
 import com.mytest.sprinbot.model.UserRegist;
 import com.mytest.sprinbot.service.UserRegistService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,6 +16,7 @@ import java.util.Date;
  * @Date: 2019-08-28
  * @Time: 15:00
  */
+@Slf4j
 @RestController
 @RequestMapping("/user")
 public class UserRegistController {
@@ -31,6 +33,7 @@ public class UserRegistController {
         userRegist.setRegistTime(new Date());
 
         userRegistService.insert(userRegist);
+        log.info("插入成功：{}", userRegist);
         return "OK";
     }
 }
