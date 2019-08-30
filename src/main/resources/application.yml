@@ -2,12 +2,6 @@
 spring:
   application:
     name: spring-boot-rabbitmq
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
-
   datasource:
     username: hj_caishang
     password: hj_caishang123
@@ -39,60 +33,15 @@ spring:
     # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
 
-
-#datasource
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=true
-#    username: root
-#    password: root
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-
-
 #数据库配置
-
-#redis
-  redis:
-    database: 0
-    host: 127.0.0.1
-    port: 6379
-    password:
-    jedis:
-      pool:
-        max-wait: -1
-        max-idle: 8
-        min-idle: 0
-        max-active: 8
-  session:
-    store-type: redis
 
 #mybatis
 mybatis:
   config-location: classpath:mappers/config/mybatis-config.xml
   mapper-locations: classpath:mappers/*.xml
   type-aliases-package: com.mytest.sprinbot.model
-security:
-  basic:
-    enabled: false
 
 
-#redis
-jetcache:
-    statIntervalMinutes: 15
-    areaInCacheName: false
-    local:
-          default:
-                type: linkedhashmap
-                keyConvertor: fastjson
 
-    remote:
-         default:
-               type: redis
-               keyConvertor: fastjson
-               valueEncoder: java
-               valueDecoder: java
-               poolConfig:
-                      minIdle: 5
-                      maxIdle: 20
-                      maxTotal: 50
-               host: 127.0.0.1
-               port: 6379
+server:
+  port: 8089
